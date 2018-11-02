@@ -1,0 +1,34 @@
+{% extends '../base.html' %}
+
+{% block css_link %}
+<link href="/assets/css/board.css" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block content %}
+		<div id="content">
+			<div id="board" class="board-form">
+				<table class="tbl-ex">
+					<tr>
+						<th colspan="2">글보기</th>
+					</tr>
+					<tr>
+						<td class="label">제목</td>
+						<td>{{board_list.title}}</td>
+					</tr>
+					<tr>
+						<td class="label">내용</td>
+						<td>
+							<div class="view-content">
+							{{board_list.content}}
+							</div>
+						</td>
+					</tr>
+				</table>
+				<div class="bottom">
+					<a href="/board/list">글목록</a>
+					<a href="/board/modify?id={{board_list.id}}">글수정</a>
+					<a href="reply?id={{board_list.id}}">답글</a>
+				</div>
+			</div>
+		</div>
+{% endblock %}

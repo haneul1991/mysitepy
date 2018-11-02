@@ -1,0 +1,15 @@
+{% extends '../base.html' %}
+
+{% block css_link %}
+<link href="/assets/css/board.css" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block content %}
+		<div id="content">
+			<div id="board" class="board-delete">
+                <h3>정말로 삭제 하시겠습니까?</h3>
+                <a href='/board/delete?id={{board.id}}'>삭제</a>
+                <a href='/board/list'>취소</a>
+			</div>
+		</div>
+{% endblock %}
